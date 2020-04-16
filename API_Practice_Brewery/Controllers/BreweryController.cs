@@ -57,5 +57,27 @@ namespace API_Practice_Brewery.Controllers
             
             return View(brewery);
         }
+
+        [HttpGet]
+        public IActionResult Search()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Search(string input)
+        {
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://brianiswu-open-brewery-db-v1.p.rapidapi.com");
+            client.DefaultRequestHeaders.Add("x-rapidapi-host", "brianiswu-open-brewery-db-v1.p.rapidapi.com");
+            client.DefaultRequestHeaders.Add("x-rapidapi-key", "0495956901msh0faebcb59561518p1e45ebjsnbd272e41ebb3");
+
+
+            //take input and plug into search query
+            var response = await client.GetAsync($"/search?query={input}");
+            var brewery = await response.Content.ReadAsAsync<Brewery>();
+
+            return View(brewery);
+        }
     }
-}
+    }

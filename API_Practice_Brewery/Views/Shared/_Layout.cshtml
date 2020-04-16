@@ -25,7 +25,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Brewery" asp-action="Index">Breweries!</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Brewery" asp-action="Index">Pictures  !</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Media" asp-action="Index">Beer Media!</a>
                         </li>
                     </ul>
                 </div>
@@ -38,10 +38,14 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - API_Practice_Brewery - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="footer text-muted">
+        
+        <div padding="50px" class="d-flex justify-content-around">
+            <a href="../../Brewery/RandomBrewery" class="btn btn-success">Find Random Brewery</a>
+            <a href="../../Brewery/Search" class="btn btn-success">Search</a>
+            <a href="../../Brewery/TopRated" class="btn btn-success">Top Rated</a>
         </div>
+        
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
